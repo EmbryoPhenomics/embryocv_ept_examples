@@ -187,7 +187,8 @@ def download_zenodo_video(path = False):
 
 def batch_analysis(rep = None):
     # Remove if not wanting to run this example
-    vids = glob.glob('*')
+    vids = glob.glob('*.avi')
+    print('Processing: ', vids)
     results = dict()
     temp = []
     time = []
@@ -230,7 +231,7 @@ vid = glob.glob('*.avi')[0]
 epts = calculate_epts(video=vid)
 
 # Run example on multiple videos
-download_zenodo_videos()
+#download_zenodo_videos()
 # Get list of videos
 vids = glob.glob('*.avi')[0]
 # Calculate EPTs..
@@ -246,6 +247,8 @@ epts = _freq_analysis(mean_px, 30,8)
 
 url = 'https://zenodo.org/record/4645805/files/20C_A1_10d.avi?download=1'
 vid = wget.download(url)
+
+vids
 
 !pip install umap-learn
 embedding = umap.UMAP().fit_transform(digits.data)
