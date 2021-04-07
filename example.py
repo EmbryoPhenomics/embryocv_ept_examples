@@ -43,7 +43,7 @@ mpx = np.asarray([view_as_blocks(frame, block_shape).mean(axis=(2,3)) for frame 
 epts = np.empty((blocksize, blocksize, 2, int(len(video)/2)+1))
 for i in range(blocksize):
     for j in range(blocksize):
-        epts[i,j,0,:], epts[i,j,1,:] = signal.welch(mpx[:,i,j], video.fps, scaling='spectrum', nfft=len(mpx))
+        epts[i,j,0,:], epts[i,j,1,:] = signal.welch(mpx[:,i,j], fs=video.fps, scaling='spectrum', nfft=len(mpx))
 
 # Plot results --------------------------------------------------------------------
 # Mean pixel values
