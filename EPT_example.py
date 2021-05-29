@@ -27,7 +27,7 @@ def crop(frame):
     '''Crop an image according to the blocksize required for EPT calculation.'''
     # Floor used so new image size is always below the original resolution
     new_x, new_y = map(lambda v: math.floor(v/blocksize)*blocksize, frame.shape) 
-    return frame[:new_y, :new_x]
+    return frame[:new_x, :new_y]
 
 # Retrieve footage and read in frames
 path = wget.download(path)
